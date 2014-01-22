@@ -35,7 +35,7 @@ define(["require","deepjs/deep","deepjs/lib/view"], function(require, deep){
 			return deep.getAll([uri, schema])
 			.done(function(result){
 				var datas = res[0], 
-				    schema = res[0] || {};
+				    schema = res[1] || {};
 				    
 				   // TO DO : use datas and schema to produce header + rows + pager
 				   
