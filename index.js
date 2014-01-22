@@ -35,18 +35,18 @@ define(["require","deepjs/deep","deepjs/lib/view"], function(require, deep){
 			return deep.getAll([uri, schema])
 			.done(function(result){
 				var datas = result[0], 
-				    schema = result[1] || {};
-				    
-				   // TO DO : use datas and schema to produce header + rows + pager
-				   
-				var headerNode = $(node).find("*[list-header]");
-				var headerHtml = headerNode.outerHTML();
-	
-				var rowNode = $(node).find("*[list-row]");
-				var rowHtml = rowNode.outerHTML();
-	
-				var pagerNode = $(node).find("*[list-pager]");
-				var pagerHtml = pagerNode.outerHTML();
+				schema = result[1] || {},
+				
+				headerNode = $(node).find("*[list-header]"),
+				headerHtml = headerNode.outerHTML(),
+				
+				rowNode = $(node).find("*[list-row]"),
+				rowHtml = rowNode.outerHTML(),
+				
+				pagerNode = $(node).find("*[list-pager]"),
+				pagerHtml = pagerNode.outerHTML();
+				
+				// TO DO : use datas and schema to produce header + rows + pager
 	
 				headerHtml = deep.ui.swig(headerHtml);
 				rowHtml = deep.ui.swig(rowHtml);
