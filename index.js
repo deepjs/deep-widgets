@@ -25,7 +25,7 @@ define(["require","deepjs/deep","deepjs/lib/view"], function(require, deep){
 		}		
 	},deep.ui.View.htmlEnhancers);
 
-
+	// todo : add default-engine flag somewhere
 	deep.widgets = {
 		list:function (descriptor,node) {
 			/* TO DO : add gards (missing protocol, missing uri, etc... )*/
