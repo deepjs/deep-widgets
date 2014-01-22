@@ -28,10 +28,17 @@ define(["require","deepjs/deep","deepjs/lib/view"], function(require, deep){
 
 	deep.widgets = {
 		list:function (descriptor,node) {
-			var ressourceURI = $(node).attr("bind");
-			// parse request, take protocol + "schema", get schema as this 
-			return deep.getAll([ressourceURI, schema])
-			.done(function(success){
+			/* TO DO : add gards (missing protocol, missing uri, etc... )*/
+			var uri = $(node).attr("bind");
+			var request = deep.utils.parseRequest(uri);
+                        var schema = request.protocol+"::schema";
+			return deep.getAll([uri, schema])
+			.done(function(result){
+				var datas = res[0], 
+				    schema = res[0] || {};
+				    
+				   // TO DO : use datas and schema to produce header + rows + pager
+				   
 				var headerNode = $(node).find("*[list-header]");
 				var headerHtml = headerNode.outerHTML();
 	
