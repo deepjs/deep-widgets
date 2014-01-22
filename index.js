@@ -34,8 +34,8 @@ define(["require","deepjs/deep","deepjs/lib/view"], function(require, deep){
                         var schema = request.protocol+"::schema";
 			return deep.getAll([uri, schema])
 			.done(function(result){
-				var datas = res[0], 
-				    schema = res[1] || {};
+				var datas = result[0], 
+				    schema = result[1] || {};
 				    
 				   // TO DO : use datas and schema to produce header + rows + pager
 				   
@@ -52,9 +52,9 @@ define(["require","deepjs/deep","deepjs/lib/view"], function(require, deep){
 				rowHtml = deep.ui.swig(rowHtml);
 				pagerHtml = deep.ui.swig(pagerHtml);
 	
-				$(headerNode).replaceWith(headerHtml({title:"hello"}));
-				$(rowNode).replaceWith(rowHtml({title:"hello"}));
-				$(pagerNode).replaceWith(pagerHtml({title:"hello"}));	
+				headerNode.replaceWith(headerHtml({title:"hello"}));
+				rowNode.replaceWith(rowHtml({title:"hello"}));
+				pagerNode.replaceWith(pagerHtml({title:"hello"}));	
 			});
 		}
 	};
