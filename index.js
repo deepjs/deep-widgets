@@ -31,7 +31,7 @@ define(["require","deepjs/deep","deepjs/lib/view"], function(require, deep){
 			/* TO DO : add gards (missing protocol, missing uri, etc... )*/
 			var uri = $(node).attr("bind");
 			var request = deep.utils.parseRequest(uri);
-                        var schema = request.protocol+"::schema";
+            var schema = request.protocol+"::schema";
 			return deep.getAll([uri, schema])
 			.done(function(result){
 				var datas = result[0], 
