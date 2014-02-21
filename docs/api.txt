@@ -1,0 +1,36 @@
+
+
+dp-partials
+
+
+dp-repeat
+
+
+dp-click
+
+______
+
+dp-route
+
+_____
+
+dp-bind
+
+_____
+
+dp-list
+	dp-sort
+	dp-filter
+	dp-range
+
+dp-form
+	
+
+
+
+schema = {
+	
+	form:[
+		
+	]
+}

@@ -1,0 +1,17 @@
+<div> 
+	search : <input dp-filter="dq" type="text" value="{{ query }}" />
+	sort : <select dp-sort="sort" ><options>brol</options></select>
+	<ul class="list">
+	{% for item in results %}
+	<li class="item" dp-route=">/item/{{ item.id }}" item-id="{{ item.id }}"><a href="{{ dp.getRoute('./item/'+item.id )}}"><strong> {{ item.meta.artist }}</strong> ({{ item.meta.year }}) - {{ item.meta.album }} - {{ item.meta.title }}</a></li>
+	{% endfor %}
+	</ul>
+	
+	{% if hasPrevious %}
+	<button id="range-previous-button" >previous</button>
+	{% endif %}
+	{% if hasNext %}
+	<button id="range-next-button" >next</button>
+	{% endif %}
+	<span id="range-state">{{ start }}-{{ end }}/{{ total }}</span>
+</div>
