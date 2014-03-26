@@ -11,7 +11,7 @@ define(["require","deepjs/deep","deepjs/lib/view"], function(require, deep){
 	};
 
 	deep.utils.up({
-		deepWidgets : function (descriptor) {
+		"dp-widgets" : function (descriptor) {
 			var promises = [];
 			descriptor.placed
 			.find("div[deep-widgets]") // <div  object-bind="mp3::id" schema:"jsion::",  maxLength="12"> 
