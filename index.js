@@ -2,26 +2,12 @@ if (typeof define !== 'function') {
 	var define = require('amdefine')(module);
 }
 
-define(["require", "deepjs/deep", "deepjs/lib/view"], function(require, deep) {
+define(["require", "deepjs/deep", "deepjs/lib/views/view"], function(require, deep) {
 
 	jQuery.fn.outerHTML = function(s) {
 		return s ? this.before(s).remove() : jQuery("<p>").append(this.eq(0).clone()).html();
 	};
 
-	deep.ui.enhancers = deep.up({
-		"dp-widgets": function(descriptor) {
-			var promises = [];
-			descriptor.placed
-				.find("div[deep-widgets]") // <div  object-bind="mp3::id" schema:"jsion::",  maxLength="12"> 
-			.each(function() {
-				var type = $(this).attr("deep-widgets");
-				if (!deep.widgets[type])
-					throw deep.errors.Error(500, "This widget didn't exist yet...");
-				promises.push(deep.widgets[type](descriptor, this));
-			});
-			return promises;
-		}
-	}, deep.ui.enhancers);
 
 	// todo : add default-engine flag somewhere
 	deep.widgets = {
