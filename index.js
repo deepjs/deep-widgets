@@ -2,7 +2,7 @@ if (typeof define !== 'function') {
 	var define = require('amdefine')(module);
 }
 
-define(["require", "deepjs/deep", "deepjs/lib/views/view"], function(require, deep) {
+define(["require", "deepjs/deep", "deep-views/lib/view"], function(require, deep) {
 
 	jQuery.fn.outerHTML = function(s) {
 		return s ? this.before(s).remove() : jQuery("<p>").append(this.eq(0).clone()).html();
